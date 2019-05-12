@@ -33,6 +33,7 @@ function loadRecipe() {
 		      color = "red";
 		      break;
 		}
+		$("#imgReceta").attr("src",data.photo_url);
 		$("#difficulty").html(difficultyText)
 		$("#difficulty").addClass(color)
 		$("#porciones").html(" "+data.servings)
@@ -42,7 +43,7 @@ function loadRecipe() {
 		}
 
 		for (var i = data.steps.length - 1; i >= 0; i--) {
-			$("#steps").append(`<li>${data.ste[i]}</li>`)
+			$("#steps").append(`<li>${data.steps[data.steps.length -i -1]}</li>`)
 		}
     },
     error: function(error_msg) {

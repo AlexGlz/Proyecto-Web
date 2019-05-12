@@ -4,12 +4,35 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Main Test</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/imageSlider.css">
 </head>
 <body>
-
+	<div id="header">
+		<div id="hdContainer">
+			<img src="img/Logo.png" id="logo">
+			<div id="searchSection">
+				<input type="text" placeholder="Buscar..." id="txtBuscar"><select  required id="selectClasif">
+					<option value="" disabled selected hidden>Clasificación</option>
+					<option value="Vegetarian">Vegetarian</option>
+					<option value="Baked">Baked</option>
+				</select><button  id="btnBuscar">Buscar</button>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+	<div id="sliderFrame">
+        <div id="slider">
+            <img src="img/Banner1.jpg" />
+            <img src="img/Banner2.jpg" />
+            <img src="img/Banner3.jpg" />
+            <img src="img/Banner4.jpg" />
+        </div>
+  	</div>
+  	<div style="clear:both;height:0;"></div>
 	<ul id="recipeHolder">
 		
 	</ul>
+	<script type="text/javascript" src="js/imageSlider.js"></script>
 	<script type="text/javascript" src="./js/lib/jquery.js" ></script>
 	<script type="text/javascript" src="./js/main.js"></script>
 </body>

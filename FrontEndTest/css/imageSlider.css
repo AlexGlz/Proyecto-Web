@@ -6,9 +6,10 @@
 
 #sliderFrame 
 {
+
     width:80%;
     margin:0 auto; /*center-aligned*/
-    margin-top: 20px;
+    margin-top: 62px; 
     padding:0px;
     box-shadow: 0 0 5px #BBB;
     border:1px solid #CCC;

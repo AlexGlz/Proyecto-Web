@@ -12,7 +12,7 @@ function loadRecipes() {
       console.log(data)
 
       for( let i = 0; i < data.length; i++) {
-        addRecipe(data[i]._id,"https://i.imgur.com/XsaLqi1.jpg",data[i].name,data[i].difficulty,data[i].prep_time,data[i].cook_time,data[i].clasif)
+        addRecipe(data[i]._id,data[i].photo_url,data[i].name,data[i].difficulty,data[i].prep_time,data[i].cook_time,data[i].clasif)
       }
       setClick();
     },
@@ -48,7 +48,7 @@ function addRecipe(id,img,name,difficulty, prepTime,cookTime,clasif){
       break;
   }
   newHTML = `<li id="${id}">
-      <img src=${img}></img>
+      <img class="previewImg" src=${img}></img>
       <div>
         <div><h2>${name}</h2><h4>${clasifTxt}</h4></div>
         <div style=""></div>
@@ -65,5 +65,38 @@ loadRecipes();
 function setClick(){
   $("li").click(function(event){
     window.open("./receta.html?receta="+ this.id,"_self");
+  });
+}
+
+$("#btnBuscar").click(function(event){
+  
+  var txtBuscar = $("#txtBuscar").val()
+  var txtClasif = ""
+  console.log("Buscando: "+txtBuscar + "\nClasif: "+txtClasif);
+  $("#recipeHolder").html("");
+  getRecipeFilter(txtBuscar,txtClasif);
+})
+
+function getRecipeFilter(txtBuscar, clasif){
+  $.ajax({
+    url: 'http://localhost:3000/recipes/filter?name='+txtBuscar+"&clasif="+clasif,
+    //url: 'https://exam-final.herokuapp.com/todos',
+    headers: {
+        'Content-Type':'application/json',
+        //'Authorization': 'Bearer ' + token
+    },
+    method: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data)
+
+      for( let i = 0; i < data.length; i++) {
+        addRecipe(data[i]._id,data[i].photo_url,data[i].name,data[i].difficulty,data[i].prep_time,data[i].cook_time,data[i].clasif)
+      }
+      setClick();
+    },
+    error: function(error_msg) {
+      alert((error_msg['responseText']));
+    }
   });
 }
