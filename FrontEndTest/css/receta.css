@@ -2,10 +2,12 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: black;
-  background-color: #f4f6f4;
+  animation: colorchange 50s;
+-webkit-animation: colorchange 50s;
+  
 }
 
-img {
+#imgReceta {
 	margin: 0px 50px 0px 50px;
 	float: left;
 	height: 250px;
@@ -23,6 +25,12 @@ header{
 	height: 300px
 }
 
+.icon{
+	vertical-align: center;
+	height: 35px;
+	padding-right: 30px;
+	display: inline-block;
+}
 
 #titleIngr{
 	float: left;
@@ -45,6 +53,10 @@ ul, ol{
 }
 
 li{
+
+}
+span{
+	vertical-align: center;
 
 }
 
@@ -72,3 +84,20 @@ li{
 .red{
 	color: red;
 }
+
+@keyframes colorchange
+    {
+      0%   {background:  #BAFFC9;}
+      25%   {background:  #BAE1FF;}
+      50% {background:  #BAFFC9;}
+      75% {background:  #BAE1FF;}
+      100% {background:  #BAFFC9;}
+    }
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+   {
+      0%   {background:  #BAFFC9;}
+      25%   {background:  #BAE1FF;}
+      50% {background:  #BAFFC9;}
+      75% {{background:  #BAE1FF;}
+      100% {background:  #BAFFC9;}
+    }
