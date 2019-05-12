@@ -5,6 +5,7 @@ var cors = require('cors');
 const users = require('./controllers/users.js')
 const todos = require('./controllers/todos.js')
 const auth = require('./middleware/auth')
+const recipes = require('./controllers/recipes.js')
 
 
 router.all('*',cors());
@@ -22,6 +23,12 @@ router.post('/todos', auth, todos.createTodo)
 router.patch('/todos/:id', auth, todos.updateTodo)
 router.delete('/todos/:id', auth, todos.deleteTodo)
 
+router.get('/recipes',recipes.getRecipes)
+router.get('/recipes/userRecipes',auth,recipes.getUserRecipes)
+router.get('/recipes/filter',recipes.getFilterRecipes)
+router.get('/recipes/:id',recipes.getRecipe)
+router.post('/recipes',auth,recipes.createRecipe)
+router.patch('/recipes/:id',auth,recipes.updateRecipe)
 
 router.get('*', function(req, res) {
   res.send({

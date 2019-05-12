@@ -1,4 +1,16 @@
-const Recipe = require('../models/recipe')_
+const Recipe = require('../models/recipe');
+
+const getRecipe = function(req,res){
+  const _id = req.params.id
+  Recipe.findOne({_id}).then(function(recipe){
+    if(!recipe){
+      return res.status(404).send({ error: `Task with id ${_id} not found.`})
+    }
+    res.send(recipe)
+  }).catch(function(error){
+    res.status(500).send(error);
+  })
+}
 
 const getRecipes = function(req,res){
 	Recipe.find({}).then(function(recipes){
@@ -6,6 +18,20 @@ const getRecipes = function(req,res){
 	}).catch(function(error){
 		res.status(500).send(error);
 	});
+}
+
+const getFilterRecipes = function(req,res){
+  const filterName =  req.query.name;
+  const filterClasif = req.query.clasif;
+  var objFilter = {};
+  if(filterClasif) objFilter["clasif"] = filterClasif;
+  if(filterName) objFilter["name"] = {$regex: filterName, $options: 'i'}
+  console.log(objFilter);
+  Recipe.find(objFilter).then(function(recipes){
+    res.send(recipes);
+  }).catch(function(error){
+    res.status(500).send(error);
+  })
 }
 
 const getUserRecipes = function(req,res){
@@ -31,7 +57,7 @@ const createRecipe = function(req,res){
 const updateRecipe = function(req,res){
 	const _id = req.params.id
   	const updates = Object.keys(req.body)
-  	const allowedUpdates = ['description', 'completed']
+  	const allowedUpdates = ['name', 'prep_time','cook_time','difficulty','servings','clasif']
   	//Determinar qué campos se pueden editar
   	const isValidUpdate = updates.every((update) => allowedUpdates.includes(update));
 
@@ -63,4 +89,14 @@ const deleteRecipe = function(req, res) {
   }).catch(function(error) {
     res.status(505).send({ error: error })
   })
+}
+
+module.exports ={
+  getRecipe:getRecipe,
+  getRecipes:getRecipes,
+  getUserRecipes:getUserRecipes,
+  getFilterRecipes:getFilterRecipes,
+  createRecipe: createRecipe,
+  updateRecipe: updateRecipe,
+
 }

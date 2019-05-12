@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator')
 
-const recipe = mongoose.model('Recipe',{
+
+const recipeSchema = new mongoose.Schema({
 	name:{
 		type: String,
 		required: true
@@ -57,5 +58,5 @@ const recipe = mongoose.model('Recipe',{
   }
 }); 
 
-const Todo = mongoose.model('Recipe', recipeSchema);
-module.exports = recipeSchema;
+const Recipe = mongoose.model('Recipe', recipeSchema);
+module.exports = Recipe;

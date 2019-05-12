@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+}
+
+img {
+	margin: 0px 30px 0px 20px;
+	float: left;
+	height: 150px;
+	overflow: auto;
+  	position: relative;
+  	top: 50%;
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+
+#recipeHolder{
+	margin: auto;
+	width: 80%;
+	background-color: white;
+	padding: 20px 0 20px 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+#recipeHolder > li{
+	padding: 10px;
+	margin:  auto;
+	margin-bottom: 20px;
+	list-style-type: none;
+	height: 180px;
+	box-shadow: 5px 5px 3px grey;
+	background-color: #f2d8a7;
+	width: 90%;
+	border-radius: 10px;
+}
+
+#recipeHolder> li:hover{
+	cursor: pointer;
+	background-color: #ccb996;
+}
+
+#recipeHolder> li:active{
+	background-color: #c1b295;
+}
+
