@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Receta</title>
+	<link rel="stylesheet" type="text/css" href="css/receta.css">
+</head>
+<body>
+
+	<header>
+		<img src="https://i.imgur.com/XsaLqi1.jpg">
+
+		<div id="headerContent">
+			<h1 id="nombre">aa</h1>
+			<h2>[prepTimeIcon]<span id="prep_time"></span></h2>
+			<h2>[cookTimeIcon]<span id="cook_time"></span></h2>
+			<h2>[difficultyIcon]<span id="difficulty"></span></h2>
+		</div>
+		<div style="clear: both;"></div>
+	</header>
+	<div id="content">
+		<h3 id="titleIngr">Ingredientes</h3>
+		<h4>Porciones:<span id="porciones"></span></h4>
+		<div style="clear: both;"></div>
+		<ul id="ingredients">
+			<!--DENTRO SE CARGAN LOS INGREDIENTES-->
+		</ul>
+		<h3>Preparación</h3>
+		<ol id="steps">
+			<!--DENTRO SE CARGAN LOS PASOS DE PREPARACION-->
+		</ol>
+	</div>
+	<script type="text/javascript" src="./js/lib/jquery.js" ></script>
+	<script type="text/javascript" src="js/receta.js"></script>
+</body>
+</html>

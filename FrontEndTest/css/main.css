@@ -31,7 +31,7 @@ img {
 	margin-bottom: 20px;
 	list-style-type: none;
 	height: 180px;
-	box-shadow: 5px 5px 3px grey;
+	/*box-shadow: 5px 5px 3px grey;*/
 	background-color: #f2d8a7;
 	width: 90%;
 	border-radius: 10px;
@@ -46,3 +46,28 @@ img {
 	background-color: #c1b295;
 }
 
+
+.green{
+	color: green;
+}
+
+.orange{
+	color: orange;
+}
+
+.red{
+	color: red;
+}
+
+h2{
+	display: inline-block;
+}
+
+h4{
+	display: inline-block;
+	float: right;
+	text-align: right;
+	color: grey;
+	font-style: italic;
+	padding-right: 20px;
+}
