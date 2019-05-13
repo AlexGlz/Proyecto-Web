@@ -24,7 +24,8 @@ header{
 	margin: auto;
 	background-color: white;
 	width: 80%;
-	height: 300px
+	height: 300px;
+	border-radius: 10px;
 }
 
 .icon{
@@ -68,12 +69,12 @@ span{
 	margin : 30px auto 0 auto;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	border-radius: 10px;
 }
 
 
 #headerContent{
 	padding-top: 20px
-	radiu
 }
 
 .green{
