@@ -1,5 +1,7 @@
+
 h2.rTitle{
 	display: inline-block;
+	color: #e88b93;
 }
 
 h4.rClasif{
@@ -13,7 +15,7 @@ h4.rClasif{
 
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 14px;
 	color: black;
 	animation: colorchange;
@@ -91,7 +93,7 @@ img#logo{
 img.previewImg {
 	margin: 0px 30px 0px 20px;
 	float: left;
-	height: 150px;
+	height: 160px;
 	overflow: auto;
   	position: relative;
   	top: 50%;
@@ -107,6 +109,7 @@ img.previewImg {
 	width: 35px;
 	cursor: pointer;
 	vertical-align: middle;
+	background-color: #bc93bc;
 }
 
 #btnUser>img{
@@ -114,12 +117,16 @@ img.previewImg {
 	width: 23px;
 }
 
-#btnLogIn{
-	vertical-align: middle;
+#btnUser:hover{
+	background-color: #725b72;
 }
 
-#btnLogOut{
+#btnUser:active{
+}
+
+#btnLogIn{
 	vertical-align: middle;
+	background-color: #bc93bc;
 }
 
 #btnLogIn>img{
@@ -128,18 +135,24 @@ img.previewImg {
 	vertical-align: middle;
 }
 
+#btnLogIn:hover{
+	background-color: #725b72;
+}
+
+#btnLogOut{
+	vertical-align: middle;	
+	border-radius: 10px;
+	background-color: #bc93bc;
+}
+
+#btnLogOut:hover{
+	background-color: #725b72;
+}
+
 #btnLogOut>img{
 	height: 25px;
 	width: 23px;
 	vertical-align: middle;
-}
-
-#btnUser:hover{
-	background-color: red;
-}
-
-#btnUser:active{
-	background-color: green;
 }
 
 *:focus{
@@ -169,9 +182,6 @@ img.previewImg {
 	width: 90%;
 	border-radius: 10px;
 }
-
-
-
 
 .green{
 	color: green;
@@ -207,5 +217,4 @@ img.previewImg {
 }
 
 .btnMenu:active{
-	background-color: #c1b295;
 }

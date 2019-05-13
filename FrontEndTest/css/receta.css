@@ -1,5 +1,7 @@
+
 h1#nombre{
 	color: purple;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #imgReceta {
@@ -38,6 +40,7 @@ td {
     position: relative;
     padding: 3px 0;
     text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .icon{
@@ -50,18 +53,21 @@ td {
 #titleIngr{
 	float: left;
 	padding-left: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
 	
 }
 
 h3{
 	padding-left: 30px;
 	color: #e88b93;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h4{
 	float: right;
 	padding-right: 30px;
-	color: #e88b93
+	color: #e88b93;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 ul li {
   list-style: none; 
@@ -101,25 +107,26 @@ li{
 	text-align: justify;
   	text-justify: inter-word;
   	font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
 
 }
 span{
 	vertical-align: center;
-
+  font-family: 'Source Sans Pro', sans-serif;
 }
 	
 
 @keyframes colorchange
-    {
-      0%   {background:  #BAFFC9;}
-      33%   {background:  #BAE1FF;}
-      66%  {background: #F1CBFF;}
-      100% {background:  #BAFFC9;}
-    }
-     @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-    {
-      0%   {background:  #BAFFC9;}
-      33%   {background:  #BAE1FF;}
-      66%  {background: #F1CBFF;}
-      100% {background:  #BAFFC9;}
-    }
+{
+  0%   {background:  #BAFFC9;}
+  33%   {background:  #BAE1FF;}
+  66%  {background: #F1CBFF;}
+  100% {background:  #BAFFC9;}
+}
+ @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background:  #BAFFC9;}
+  33%   {background:  #BAE1FF;}
+  66%  {background: #F1CBFF;}
+  100% {background:  #BAFFC9;}
+}

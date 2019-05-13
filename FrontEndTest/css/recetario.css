@@ -5,6 +5,7 @@ input{
 }
 
 input[type=text]{
+	font-family: 'Source Sans Pro', sans-serif;
 	border: none;
 	height: 30px;
 	padding-left: 10px;
@@ -12,6 +13,7 @@ input[type=text]{
 }
 
 input::placeholder{
+	font-family: 'Source Sans Pro', sans-serif;
 	color: grey;
 	font-style: italic;
 }
@@ -19,15 +21,16 @@ input::placeholder{
 button#btnBuscar{
 	height: 32px;
 	border: none;
+	font-family: 'Source Sans Pro', sans-serif;
 	border-radius: 0 5px 5px 0;
+	background-color: #bc93bc
 }
 
-button#btnBuscar:hover{
-	background-color: green;
+button#btnBuscar:hover{	
+	background-color: #725b72;
 }
 
 button#btnBuscar:active{
-	background-color: red;
 }
 
 #recipeHolder> li:hover{
@@ -44,6 +47,7 @@ button#btnBuscar:active{
 }
 
 #selectClasif{
+		font-family: 'Source Sans Pro', sans-serif;
 		border-width: 0 0 0 1px;
 		height: 32px;
 		width: 120px;
