@@ -2,6 +2,7 @@
 
 #sliderFrame, #sliderFrame div {
     box-sizing: content-box;
+    border-radius: 10px;
 }
 
 #sliderFrame 
