@@ -9,16 +9,33 @@
 </head>
 <body>
 
-	<header>
+	<header style="height: 450px">
 		<img src="" id="imgReceta">
-
 		<div id="headerContent">
 			<h1 id="nombre">aa</h1>
+			<h3 id="clasificaciones" style="text-align: left">clasificaciones</h3>
 			<h2><img src="img/PrepTime.png" class="icon"><span id="prep_time"></span></h2>
 			<h2><img src="img/CookTime.png" class="icon"><span id="cook_time"></span></h2>
-			<h2><img src="img/Difficulty.png" class="icon"><span id="difficulty"></span></h2>
-		</div>
+			<h2><img src="img/Difficulty.png" class="icon"><span id="difficulty"></span></h2>			
+		</div>		
 		<div style="clear: both;"></div>
+		<table id="ValorNutrimental" style="margin:auto; margin-top:20px">
+		  <caption style="text-align: left; margin:auto"><h3>Valor Nutrimental por porción</h3></caption>
+		  <tr>
+		    <th>Kcal</th>
+		    <th>Grasas</th> 
+		    <th>Saturadas</th>
+		    <th>Azúcar</th>
+		    <th>Sal</th>
+		  </tr>
+		  <tr>
+		    <td id="calorias">276</td>
+		    <td id="grasas">10 g</td>
+		    <td id="saturadas">2 g</td>
+		    <td id="azucar">3 g</td>
+		    <td id="sal">2 g</td>
+		  </tr>  
+		</table>
 	</header>
 	<div id="content">
 		<h3 id="titleIngr">Ingredientes</h3>
