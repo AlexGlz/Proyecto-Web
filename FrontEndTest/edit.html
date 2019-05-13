@@ -2,10 +2,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Main Test</title>
-	<link rel="stylesheet" type="text/css" href="css/recetario.css">
-	<link rel="stylesheet" type="text/css" href="css/imageSlider.css">
+	<title>Recipe</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/recetario.css">
 </head>
 <body>
 	<div id="header">
@@ -30,24 +29,17 @@
 			<div style="clear: both;"></div>
 		</div>
 	</div>
-	<div id="sliderFrame">
-        <div id="slider">
-            <img src="img/Banner1.jpg" />
-            <img src="img/Banner2.jpg" />
-            <img src="img/Banner3.jpg" />
-            <img src="img/Banner4.jpg" />
-        </div>
-  	</div>
-  	<div style="clear:both;height:0;"></div>
-	<ul id="recipeHolder">
-		
-	</ul>
-
+	<div style="height: 70px"></div>
+	<div id="content">
+		<div id="headerContent" style="padding-left: 30px">
+			<h1 id="modo" style="margin: 0">Modo editar/crear</h1>
+			<div>Url de la imagen: <input type="textRecipe" placeholder="URL"></div>
+			<div>Nombre: <input type="textRecipe" placeholder="Nombre"></div>
+			<div>Tiempo de preparación: <input type="textRecipe" placeholder="0 min"></div>
+			<div>Tiempo de cocción: <input type="textRecipe" placeholder="0 min"></div>
+		</div>
+	</div>
 	<script type="text/javascript" src="./js/lib/jquery.js" ></script>
-
-	<script type="text/javascript" src="js/imageSlider.js"></script>
-
 	<script type="text/javascript" src="js/header.js"></script>
-	<script type="text/javascript" src="./js/recetario.js"></script>
 </body>
 </html>
