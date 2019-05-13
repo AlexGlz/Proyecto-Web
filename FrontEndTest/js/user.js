@@ -115,7 +115,9 @@ function clickedDelete(event){
 
 function setClick(){
 	$(".btnView").click(clickedView)
-  $(".btnDelete").click(clickedDelete)
+  $(".btnDelete").click(clickedDelete)  
+  $(".btnEdit").click(editRecipe)
+
 }
 
 
@@ -139,5 +141,9 @@ function deleteRecipe(id){
 }
 
 $("#btnAddRecipe").click(function(){
-  window.location = './edit.html'
+  window.location = './edit.html?mode=create'
 })
+
+function editRecipe(event){
+  window.open("./edit.html?mode=edit&receta="+ this.value,"_self");
+}

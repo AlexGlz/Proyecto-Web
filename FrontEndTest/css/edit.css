@@ -15,6 +15,32 @@
 	margin-bottom: 5px;
 }
 
+
+select{
+	vertical-align: middle;
+	font-size: 15px;
+}
+
+textarea{
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+input{
+	font-family: 'Source Sans Pro', sans-serif ;
+	vertical-align: middle;
+	font-size: 15px;
+}
+
+input[type=textRecipe]{
+	border-color: grey;
+	width: 30%;
+	padding-left: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0;
+	margin-bottom: 5px;
+}
+
 .ingrediente{
 	border-color: grey;
 	width: 70%;
@@ -56,4 +82,8 @@
 
 #url{
 	width: 50%;
+}
+
+#nutritionData>li>input{
+	width: 5%;
 }

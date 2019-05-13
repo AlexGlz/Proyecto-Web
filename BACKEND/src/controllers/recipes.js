@@ -57,7 +57,7 @@ const createRecipe = function(req,res){
 const updateRecipe = function(req,res){
 	const _id = req.params.id
   	const updates = Object.keys(req.body)
-  	const allowedUpdates = ['name', 'prep_time','cook_time','difficulty','servings','clasif']
+  	const allowedUpdates = ['name', 'prep_time','cook_time','difficulty','servings','clasif','steps','nutrition','ingredients','photo_url']
   	//Determinar qué campos se pueden editar
   	const isValidUpdate = updates.every((update) => allowedUpdates.includes(update));
 

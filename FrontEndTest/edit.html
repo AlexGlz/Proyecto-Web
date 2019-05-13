@@ -24,7 +24,7 @@
 		<div id="" style="padding-left: 30px">
 			<h1 id="modo" style="margin: 0">Modo editar/crear</h1>
 			<div>Url de la imagen: <input type="textRecipe" placeholder="URL" id="url"></div>
-			<div>Nombre:<input type="textRecipe" placeholder="Nombre" id="name"></div>
+			<div>Nombre: <input type="textRecipe" placeholder="Nombre" id="name"></div>
 			<div>Prociones: <input type="textRecipe" placeholder="Prociones" id="servings"></div>
 			<div>Tiempo de preparación: <input type="textRecipe" placeholder="0 min" id="prep_time"></div>
 			<div>Tiempo de cocción: <input type="textRecipe" placeholder="0 min" id="cook_time"></div>
@@ -34,6 +34,24 @@
 					<option value="2">Intermedio</option>
 					<option value="3">Difícil</option>
 				</select>
+			</div>
+			<div>
+				<div>Clasificación: 
+					<select  required id="clasifSelector"> 
+						<option value="0" disabled selected hidden>Clasificación</option>
+						<option value="Vegetarian">Vegetarian</option>
+						<option value="Baked">Baked</option>
+						<option value="Without topping">Without topping</option>
+						<option value="Freezable">Freezable</option>
+						<option value="Cake">Cake</option>
+						<option value="Chessecake">Chessecake</option>
+						<option value="No Baking">No Baking</option>
+					</select>
+					<button id="addClasif" class="add">+</button><button id="delClasif" class="del">-</button>
+				</div>
+				<ol id="clasifContainer">
+					<li><input type="textRecipe" placeholder="Clasificación" class="clasif" disabled=""></li>
+				</ol>
 			</div>
 			<div>
 				<div>Ingredientes:<button id="addIngredient" class="add">+</button><button id="delIngredient" class="del">-</button></div>
@@ -49,15 +67,15 @@
 			</div>
 			<div>
 				<h4>Información nutrimental:</h4>
-				<ul>
-					<li>Kcal:<input type="textRecipe" placeholder="0" id="kcal"></li>
-					<li>Azúcar:<input type="textRecipe" placeholder="0" id="sugar"></li>
-					<li>Grasa:<input type="textRecipe" placeholder="0" id="fat"></li>
-					<li>Grasas saturadas:<input type="textRecipe" placeholder="0" id="saturates"></li>
-					<li>Sal:<input type="textRecipe" placeholder="0" id="salt"></li>
+				<ul id="nutritionData">
+					<li>Kcal: <input type="textRecipe" placeholder="0" id="kcal"></li>
+					<li>Azúcar: <input type="textRecipe" placeholder="0" id="sugar"></li>
+					<li>Grasa: <input type="textRecipe" placeholder="0" id="fat"></li>
+					<li>Grasas saturadas: <input type="textRecipe" placeholder="0" id="saturates"></li>
+					<li>Sal: <input type="textRecipe" placeholder="0" id="salt"></li>
 				</ul>
 			</div>
-			<button>Guardar</button>
+			<button id='btnGuardar'>Guardar</button>
 		</div>
 	</div>
 	
