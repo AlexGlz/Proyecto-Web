@@ -1,10 +1,18 @@
+var token = localStorage.getItem('token');
+if (token) {
+  token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
+}
+
+console.log(token)
+
+
 function loadRecipes() {
   $.ajax({
-    url: 'http://localhost:3000/recipes',
+    url: 'http://localhost:3000/recipes/userRecipes',
     //url: 'https://exam-final.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
-        //'Authorization': 'Bearer ' + token
+        'Authorization': 'Bearer ' + token
     },
     method: 'GET',
     dataType: 'json',
@@ -47,56 +55,31 @@ function addRecipe(id,img,name,difficulty, prepTime,cookTime,clasif){
       color = "red";
       break;
   }
-  newHTML = `<li id="${id}">
+  newHTML = `<li id="${id}" style="margin-bottom:0px">
       <img class="previewImg" src=${img}></img>
       <div>
-        <div><h2>${name}</h2><h4>${clasifTxt}</h4></div>
+        <div><h2 class="rTitle">${name}</h2><h4 class="rClasif">${clasifTxt}</h4></div>
         <div style=""></div>
         <h3 >Dificultad: <b class="${color}">${difficultyText}</b></h3>
         <h3>Tiempo de preparación: ${prepTime} min</h3>
         ${cookText}
       </div>
-  </li>`;
+      <div style="clear:both"></div>
+  </li>
+    <div class="btnContainer">
+          <button class="btnMenu btnView" value="${id}">Ver</button><button class="btnMenu btnEdit" value="${id}">Editar</button><button class="btnMenu btnDelete" value="${id}">Eliminar</button>
+    </div> `;
   $("#recipeHolder").append(newHTML);
 }
 
 loadRecipes();
 
-function setClick(){
-  $("li").click(function(event){
-    window.open("./receta.html?receta="+ this.id,"_self");
-  });
+
+function clickedView(event){
+	window.open("./receta.html?receta="+ this.value,"_self");
 }
 
-$("#btnBuscar").click(function(event){
-  
-  var txtBuscar = $("#txtBuscar").val()
-  var txtClasif = ""
-  console.log("Buscando: "+txtBuscar + "\nClasif: "+txtClasif);
-  $("#recipeHolder").html("");
-  getRecipeFilter(txtBuscar,txtClasif);
-})
 
-function getRecipeFilter(txtBuscar, clasif){
-  $.ajax({
-    url: 'http://localhost:3000/recipes/filter?name='+txtBuscar+"&clasif="+clasif,
-    //url: 'https://exam-final.herokuapp.com/todos',
-    headers: {
-        'Content-Type':'application/json',
-        //'Authorization': 'Bearer ' + token
-    },
-    method: 'GET',
-    dataType: 'json',
-    success: function(data){
-      console.log(data)
-
-      for( let i = 0; i < data.length; i++) {
-        addRecipe(data[i]._id,data[i].photo_url,data[i].name,data[i].difficulty,data[i].prep_time,data[i].cook_time,data[i].clasif)
-      }
-      setClick();
-    },
-    error: function(error_msg) {
-      alert((error_msg['responseText']));
-    }
-  });
+function setClick(){
+	$(".btnView").click(clickedView)
 }

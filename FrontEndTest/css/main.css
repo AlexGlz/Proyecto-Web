@@ -1,8 +1,91 @@
+h2.rTitle{
+	display: inline-block;
+}
+
+h4.rClasif{
+	display: inline-block;
+	float: right;
+	text-align: right;
+	color: grey;
+	font-style: italic;
+	padding-right: 20px;
+}
+
+
 body {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: black;
-  margin: 0;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	color: black;
+	animation: colorchange;
+	-webkit-animation: colorchange;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes colorchange
+    {
+      0%   {background:  #BAFFC9;}
+      33%   {background:  #BAE1FF;}
+      66%  {background: #F1CBFF;}
+      100% {background:  #BAFFC9;}
+    }
+     @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background:  #BAFFC9;}
+      33%   {background:  #BAE1FF;}
+      66%  {background: #F1CBFF;}
+      100% {background:  #BAFFC9;}
+    }
+
+
+#header{
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: purple;		
+	margin-left: auto;
+	margin-right: auto;
+	position: fixed;	
+	overflow: hidden;	
+	z-index: 1;
+}
+
+#headerContent{
+	padding-top: 20px
+}
+
+header{
+	margin: auto;
+	background-color: white;
+	width: 80%;
+	height: 300px;
+	border-radius: 10px;
+}
+
+#content{
+	width: 80%;
+	background-color: white;
+	margin : 30px auto 0 auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 10px;
+}
+
+
+#rightSection{
+	float: right;
+	vertical-align: middle;
+}
+
+
+#hdContainer{
+	margin: 15px;
+	padding: 0;
+}
+
+img#logo{
+	height: 30px;
+	position: relative;
 }
 
 img.previewImg {
@@ -15,9 +98,28 @@ img.previewImg {
   	-ms-transform: translateY(-50%);
   	transform: translateY(-50%);
 }
-img#logo{
-	height: 30px;
+
+#btnUser{
+	margin: 0 25px 0 30px;
+	border: none;
+	border-radius: 25px;
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
 }
+
+#btnUser:hover{
+	background-color: red;
+}
+
+#btnUser:active{
+	background-color: green;
+}
+
+*:focus{
+	outline: none;
+}
+
 
 #recipeHolder{
 	margin: auto;
@@ -42,14 +144,7 @@ img#logo{
 	border-radius: 10px;
 }
 
-#recipeHolder> li:hover{
-	cursor: pointer;
-	background-color: #ccb996;
-}
 
-#recipeHolder> li:active{
-	background-color: #c1b295;
-}
 
 
 .green{
@@ -64,82 +159,27 @@ img#logo{
 	color: red;
 }
 
-h2{
-	display: inline-block;
+
+.btnContainer{ 
+	display: block;
+	width:30%;
+	margin: 0 auto 0 auto;
+	margin-bottom: 20px;
 }
 
-h4{
-	display: inline-block;
-	float: right;
-	text-align: right;
-	color: grey;
-	font-style: italic;
-	padding-right: 20px;
-}
-
-#header{
-	left: 0;
-	top: 0;
-	width: 100%;
-	background-color: blue;		
-	margin-left: auto;
-	margin-right: auto;
-	position: fixed;	
-	overflow: hidden;	
-	z-index: 1;
-}
-
-#hdContainer{
-	margin: 15px;
-	padding: 0;
-}
-
-#searchSection{
-	float: right;
-
-}
-
-input{
-	border-radius: 5px 0 0 5px;
-}
-
-input[type=text]{
-	border: none;
+.btnMenu{
+	width: 33%;
 	height: 30px;
-	padding-left: 10px;
-	color: black;
-}
-
-input::placeholder{
-	color: grey;
-	font-style: italic;
-}
-
-button{
-	height: 32px;
+	background-color: #f2d8a7;
 	border: none;
-	border-radius: 0 5px 5px 0;
+	border-radius: 0 0 10px 10px;
+	cursor: pointer;
 }
 
-button:hover{
-	background-color: green;
+.btnMenu:hover{
+	background-color: #ccb996;
 }
 
-button:active{
-	background-color: red;
-}
-
-*:focus{
-	outline: none;
-}
-
-#selectClasif:invalid{
-	color: gray;
-}
-
-#selectClasif{
-
-		border-width: 0 0 0 1px;
-		height: 32px;
-		width: 40px;
+.btnMenu:active{
+	background-color: #c1b295;
 }

@@ -1,0 +1,50 @@
+
+
+input{
+	border-radius: 5px 0 0 5px;
+}
+
+input[type=text]{
+	border: none;
+	height: 30px;
+	padding-left: 10px;
+	color: black;
+}
+
+input::placeholder{
+	color: grey;
+	font-style: italic;
+}
+
+button#btnBuscar{
+	height: 32px;
+	border: none;
+	border-radius: 0 5px 5px 0;
+}
+
+button#btnBuscar:hover{
+	background-color: green;
+}
+
+button#btnBuscar:active{
+	background-color: red;
+}
+
+#recipeHolder> li:hover{
+	cursor: pointer;
+	background-color: #ccb996;
+}
+
+#recipeHolder> li:active{
+	background-color: #c1b295;
+}
+
+#selectClasif:invalid{
+	color: gray;
+}
+
+#selectClasif{
+		border-width: 0 0 0 1px;
+		height: 32px;
+		width: 120px;
+}

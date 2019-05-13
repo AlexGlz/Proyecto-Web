@@ -1,3 +1,10 @@
+
+var token = localStorage.getItem('token');
+if (token) {
+  token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
+}
+console.log(token)
+
 var url_string = window.location.href
 var url = new URL(url_string);
 var recetaId = url.searchParams.get("receta");
