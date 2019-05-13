@@ -8,7 +8,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
-
+	<div id="header">
+		<div id="hdContainer">
+			<img id="logo" src="img/Logo.png">
+			<div id="rightSection">
+				<button id="btnUser" hidden><img src="img/Profile.png"></button>
+				<button id="btnLogIn"><img src="img/Log in.png"></button>
+				<button id="btnLogOut" hidden><img src="img/Log out.png"></button>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+	<div style="height: 70px"></div>
 	<header style="height: 450px">
 		<img src="" id="imgReceta">
 		<div id="headerContent">
@@ -50,6 +61,7 @@
 		</ol>
 	</div>
 	<script type="text/javascript" src="./js/lib/jquery.js" ></script>
+	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/receta.js"></script>
 </body>
 </html>

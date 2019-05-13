@@ -11,6 +11,10 @@ if(token != ""){
   $("#btnLogOut").removeAttr("hidden");
 }
 
+$("#logo").click(function(){
+  window.location = './index.html'
+})
+
 $("#btnUser").click(function(){
   window.location = './user.html'
 })
@@ -20,6 +24,6 @@ $("#btnLogOut").click(function(){
   window.location = './index.html'
 })
 
-$("#btnLogIn").click(function(){
+$("#login").click(function(){
   window.location = './login.html'
 })
