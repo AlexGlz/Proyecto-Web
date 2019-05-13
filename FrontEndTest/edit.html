@@ -23,13 +23,13 @@
 	<div id="content">
 		<div id="" style="padding-left: 30px">
 			<h1 id="modo" style="margin: 0">Modo editar/crear</h1>
-			<div>Url de la imagen: <input type="textRecipe" placeholder="URL" id="url"></div>
-			<div>Nombre: <input type="textRecipe" placeholder="Nombre" id="name"></div>
-			<div>Prociones: <input type="textRecipe" placeholder="Prociones" id="servings"></div>
-			<div>Tiempo de preparación: <input type="textRecipe" placeholder="0 min" id="prep_time"></div>
-			<div>Tiempo de cocción: <input type="textRecipe" placeholder="0 min" id="cook_time"></div>
+			<div>Url de la imagen: <input class="verify" type="textRecipe" placeholder="URL" id="url"></div>
+			<div>Nombre: <input class="verify" type="textRecipe" placeholder="Nombre" id="name"></div>
+			<div>Prociones: <input class="verify" type="textRecipe" placeholder="Prociones" id="servings"></div>
+			<div>Tiempo de preparación: <input class="verify" type="textRecipe" placeholder="0 min" id="prep_time"></div>
+			<div>Tiempo de cocción: <input class="verify" type="textRecipe" placeholder="0 min" id="cook_time"></div>
 			<div>
-				Dificultad: <select id="difficulty">
+				Dificultad: <select id="difficulty" class="verify">
 					<option value="1">Fácil</option>
 					<option value="2">Intermedio</option>
 					<option value="3">Difícil</option>
@@ -50,29 +50,29 @@
 					<button id="addClasif" class="add">+</button><button id="delClasif" class="del">-</button>
 				</div>
 				<ol id="clasifContainer">
-					<li><input type="textRecipe" placeholder="Clasificación" class="clasif" disabled=""></li>
+					<!--<li><input  type="textRecipe" placeholder="Clasificación" class="clasif verify" disabled=""></li>-->
 				</ol>
 			</div>
 			<div>
 				<div>Ingredientes:<button id="addIngredient" class="add">+</button><button id="delIngredient" class="del">-</button></div>
 				<ol id="ingredientsContainer">
-					<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente"></li>
+					<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente verify"></li>
 				</ol>
 			</div>
 			<div>
 				<div>Pasos:<button id="addStep" class="add">+</button><button id="delStep" class="del">-</button></div>
 				<ol id="stepsContainer">
-					<li><textarea class="paso"></textarea></li>
+					<li><textarea class="paso verify"></textarea></li>
 				</ol>
 			</div>
 			<div>
 				<h4>Información nutrimental:</h4>
 				<ul id="nutritionData">
-					<li>Kcal: <input type="textRecipe" placeholder="0" id="kcal"></li>
-					<li>Azúcar: <input type="textRecipe" placeholder="0" id="sugar"></li>
-					<li>Grasa: <input type="textRecipe" placeholder="0" id="fat"></li>
-					<li>Grasas saturadas: <input type="textRecipe" placeholder="0" id="saturates"></li>
-					<li>Sal: <input type="textRecipe" placeholder="0" id="salt"></li>
+					<li>Kcal: <input class="verify" type="textRecipe" placeholder="0" id="kcal"></li>
+					<li>Azúcar: <input class="verify" type="textRecipe" placeholder="0" id="sugar"></li>
+					<li>Grasa: <input class="verify" type="textRecipe" placeholder="0" id="fat"></li>
+					<li>Grasas saturadas: <input class="verify" type="textRecipe" placeholder="0" id="saturates"></li>
+					<li>Sal: <input class="verify" type="textRecipe" placeholder="0" id="salt"></li>
 				</ul>
 			</div>
 			<button id='btnGuardar'>Guardar</button>

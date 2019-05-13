@@ -1,8 +1,8 @@
 
 function loadRecipes() {
   $.ajax({
-    url: 'http://localhost:3000/recipes',
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes',
+    url: 'https://proy-final.herokuapp.com/recipes',
     headers: {
         'Content-Type':'application/json',
         //'Authorization': 'Bearer ' + token
@@ -83,8 +83,8 @@ $("#btnBuscar").click(function(event){
 
 function getRecipeFilter(txtBuscar, clasif){
   $.ajax({
-    url: 'http://localhost:3000/recipes/filter?name='+txtBuscar+"&clasif="+clasif,
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/filter?name='+txtBuscar+"&clasif="+clasif,
+    url: 'https://proy-final.herokuapp.com/recipes/filter?name='+txtBuscar+"&clasif="+clasif,
     headers: {
         'Content-Type':'application/json',
         //'Authorization': 'Bearer ' + token

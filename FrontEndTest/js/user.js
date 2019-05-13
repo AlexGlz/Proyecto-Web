@@ -7,8 +7,8 @@ console.log(token)
 
 function loadUser(){
   $.ajax({
-    url: 'http://localhost:3000/users',
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/users',
+    url: 'https://proy-final.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -31,8 +31,8 @@ loadUser()
 
 function loadRecipes() {
   $.ajax({
-    url: 'http://localhost:3000/recipes/userRecipes',
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/userRecipes',
+    url: 'https://proy-final.herokuapp.com/recipes/userRecipes',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -123,8 +123,8 @@ function setClick(){
 
 function deleteRecipe(id){
   $.ajax({
-    url: 'http://localhost:3000/recipes/'+id,
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/'+id,
+    url: 'https://proy-final.herokuapp.com/recipes/'+id,
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token

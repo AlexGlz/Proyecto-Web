@@ -2,7 +2,7 @@
 
 $("#addClasif").click(function() {
 	if($("#clasifSelector").val()){
-		var newIntredient = `<li><input type="textRecipe" placeholder="Clasificación" class="clasif" disabled=""></li>`
+		var newIntredient = `<li><input type="textRecipe" placeholder="Clasificación" class="clasif verify" disabled=""></li>`
 		$("#clasifContainer").append(newIntredient)
 		clasifname = $("#clasifSelector").val()
 		$("#clasifContainer li input").last().val(clasifname)
@@ -38,7 +38,7 @@ $("#delClasif").click(function() {
 
 
 $("#addIngredient").click(function() {
-	var newIntredient = `<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente"></li>`
+	var newIntredient = `<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente verify"></li>`
 	$("#ingredientsContainer").append(newIntredient)
 
 })
@@ -50,7 +50,7 @@ $("#delIngredient").click(function() {
 
 
 $("#addStep").click(function() {
-	var newStep = `<li><textarea class="paso"></textarea></li>`
+	var newStep = `<li><textarea class="paso verify"></textarea></li>`
 	$("#stepsContainer").append(newStep)
 })
 
@@ -75,8 +75,8 @@ if(mode == "edit"){
 
 function loadRecipe() {
   $.ajax({
-    url: 'http://localhost:3000/recipes/'+recetaId,
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/'+recetaId,
+    url: 'https://proy-final.herokuapp.com/recipes/'+recetaId,
     headers: {
         'Content-Type':'application/json',
         //'Authorization': 'Bearer ' + token
@@ -107,10 +107,10 @@ function loadRecipe() {
 }
 
 function loadClasif(clasifs){
-	$("#clasifContainer li input").last().val(clasifs[0])
-	disableClasif(clasifs[0])	
-	for (var i = 1; i < clasifs.length; i++) {
-		var newClasif = `<li><input type="textRecipe" placeholder="Clasificación" class="clasif" disabled=""></li>`
+	//$("#clasifContainer li input").last().val(clasifs[0])
+	//disableClasif(clasifs[0])	
+	for (var i = 0; i < clasifs.length; i++) {
+		var newClasif = `<li><input type="textRecipe" placeholder="Clasificación" class="clasif verify" disabled=""></li>`
 		$("#clasifContainer").append(newClasif)
 		$("#clasifContainer li input").last().val(clasifs[i])
 		disableClasif(clasifs[i])
@@ -120,7 +120,7 @@ function loadClasif(clasifs){
 function loadIngredients(ingredientes){
 	$("#ingredientsContainer li input").last().val(ingredientes[0])	
 	for (var i = 1; i < ingredientes.length; i++) {
-		var newIntredient = `<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente"></li>`
+		var newIntredient = `<li><input type="textRecipe" placeholder="Ingrediente" class="ingrediente verify"></li>`
 		$("#ingredientsContainer").append(newIntredient)
 		$("#ingredientsContainer li input").last().val(ingredientes[i])
 	}
@@ -130,7 +130,7 @@ function loadIngredients(ingredientes){
 function loadSteps(steps){
 	$("#stepsContainer li textarea").last().val(steps[0])	
 	for (var i = 1; i < steps.length; i++) {
-		var newStep = `<li><textarea class="paso"></textarea></li>`
+		var newStep = `<li><textarea class="paso verify"></textarea></li>`
 		$("#stepsContainer").append(newStep)
 		$("#stepsContainer li textarea").last().html(steps[i])
 	}
@@ -193,8 +193,8 @@ function updateRecipe(){
 	}
 	json_to_send = JSON.stringify(json_to_send);
 	$.ajax({
-    url: 'http://localhost:3000/recipes/'+recetaId,
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/'+recetaId,
+    url: 'https://proy-final.herokuapp.com/recipes/'+recetaId,
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -205,6 +205,7 @@ function updateRecipe(){
     success: function(data){
       console.log("success");
       alert("Receta actualizada")
+      window.location = './user.html'
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));
@@ -215,6 +216,7 @@ function updateRecipe(){
 function createRecipe(){
 	var ingredients = getIngredients();
 	var steps = getSteps();
+	var clasif = getClasif()
 	json_to_send = {
 		"photo_url": $("#url").val(),
 		"name": $("#name").val(),
@@ -224,6 +226,7 @@ function createRecipe(){
     	"difficulty":$("#difficulty").val(),
     	"ingredients": ingredients,
     	"steps": steps,
+    	"clasif": clasif,
     	"nutrition":{
     			"kcal":$("#kcal").val(),
 		    	"sugar":$("#sugar").val(),
@@ -234,8 +237,8 @@ function createRecipe(){
 	}
 	json_to_send = JSON.stringify(json_to_send);
 	$.ajax({
-    url: 'http://localhost:3000/recipes',
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes',
+    url: 'https://proy-final.herokuapp.com/recipes',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -246,6 +249,7 @@ function createRecipe(){
     success: function(data){
       console.log("success");
       alert("Receta Creada")
+      window.location = './user.html'
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));
@@ -255,10 +259,25 @@ function createRecipe(){
 
 
 $("#btnGuardar").click(function(event){
-	if(mode == 'edit'){
+	if(!verifyData()){
+		alert("Favor de llenar todos los campos")
+	}else if(mode == 'edit'){
 		updateRecipe();
+		
 	}else if(mode == 'create'){
 		createRecipe();
+		//window.location = './user.html'
 	}
-	window.location = './user.html'
+	
 })
+
+function verifyData(){
+	var inputs = $(".verify")
+	for(i=0;i<inputs.length;i++){
+		if(inputs[i].value == ""){
+			inputs[i].focus()
+			return false;
+		}
+	}
+	return true;
+}

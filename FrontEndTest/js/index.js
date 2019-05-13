@@ -9,8 +9,8 @@ $('#login_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'http://localhost:3000/users/login',
-    //url: 'https://exam-final.herokuapp.com/users/login',
+    //url: 'http://localhost:3000/users/login',
+    url: 'https://proy-final.herokuapp.com/users/login',
     headers: {
         'Content-Type':'application/json'
     },

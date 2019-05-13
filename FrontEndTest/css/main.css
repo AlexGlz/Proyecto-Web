@@ -88,6 +88,7 @@ header{
 img#logo{
 	height: 30px;
 	position: relative;
+	cursor: pointer;
 }
 
 img.previewImg {

@@ -13,8 +13,8 @@ loadRecipe()
 
 function loadRecipe() {
   $.ajax({
-    url: 'http://localhost:3000/recipes/'+recetaId,
-    //url: 'https://exam-final.herokuapp.com/todos',
+    //url: 'http://localhost:3000/recipes/'+recetaId,
+    url: 'https://proy-final.herokuapp.com/recipes/'+recetaId,
     headers: {
         'Content-Type':'application/json',
         //'Authorization': 'Bearer ' + token
@@ -25,7 +25,9 @@ function loadRecipe() {
     	var difficultyText = "";
       	$("#nombre").html(data.name)
       	$("#prep_time").html(data.prep_time + " mins")
-      	$("#cook_time").html(data.cook_time + " mins")
+      	tiempoCocina = data.cook_time
+      	if(data.cook_time == null) tiempoCocina = 0
+      	$("#cook_time").html(tiempoCocina + " mins")
       	switch(data.difficulty){
 		    case 1: 
 		      difficultyText = "Fácil"
