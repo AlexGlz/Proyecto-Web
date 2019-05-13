@@ -29,8 +29,8 @@ $("#btnLogIn").click(function(){
 
 function dbLogOut(){
 	$.ajax({
-    url: 'http://localhost:3000/users/logout',
-    //url: 'https://proy-final.herokuapp.com//users/login',
+    //url: 'http://localhost:3000/users/logout',
+    url: 'https://proy-final.herokuapp.com/users/login',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
