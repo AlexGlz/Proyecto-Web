@@ -2,9 +2,11 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
   color: black;
-  animation: colorchange 50s;
--webkit-animation: colorchange 50s;
-  
+  animation: colorchange;
+  -webkit-animation: colorchange;
+  animation-duration: 10s;
+animation-iteration-count: infinite;
+
 }
 
 #imgReceta {
@@ -71,6 +73,7 @@ span{
 
 #headerContent{
 	padding-top: 20px
+	radiu
 }
 
 .green{
@@ -88,16 +91,14 @@ span{
 @keyframes colorchange
     {
       0%   {background:  #BAFFC9;}
-      25%   {background:  #BAE1FF;}
-      50% {background:  #BAFFC9;}
-      75% {background:  #BAE1FF;}
+      33%   {background:  #BAE1FF;}
+      66%  {background: #F1CBFF;}
       100% {background:  #BAFFC9;}
     }
-    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
-   {
+     @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
       0%   {background:  #BAFFC9;}
-      25%   {background:  #BAE1FF;}
-      50% {background:  #BAFFC9;}
-      75% {{background:  #BAE1FF;}
+      33%   {background:  #BAE1FF;}
+      66%  {background: #F1CBFF;}
       100% {background:  #BAFFC9;}
     }
