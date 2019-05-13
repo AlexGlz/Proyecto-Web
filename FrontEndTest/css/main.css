@@ -102,6 +102,21 @@ img.previewImg {
   	border-radius: 10px;
 }
 
+#btnAddRecipe {
+  font-size: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(left, #bc93bc, #725b72);
+  border: none;
+  border-radius: 25px;
+  vertical-align: center;
+}
+
 #btnUser{
 	margin: 0 25px 0 30px;
 	border: none;

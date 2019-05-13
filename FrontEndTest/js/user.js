@@ -138,3 +138,6 @@ function deleteRecipe(id){
   });
 }
 
+$("#btnAddRecipe").click(function(){
+  window.location = './edit.html'
+})
