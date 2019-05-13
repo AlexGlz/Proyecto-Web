@@ -24,6 +24,6 @@ $("#btnLogOut").click(function(){
   window.location = './index.html'
 })
 
-$("#login").click(function(){
+$("#btnLogIn").click(function(){
   window.location = './login.html'
 })
