@@ -5,6 +5,12 @@ if (token) {
 
 console.log(token)
 
+if(token != ""){
+  $("#btnUser").removeAttr("hidden");
+  $("#btnLogIn").attr("hidden","");
+  $("#btnLogOut").removeAttr("hidden");
+}
+
 function loadRecipes() {
   $.ajax({
     url: 'http://localhost:3000/recipes',
@@ -110,3 +116,16 @@ function getRecipeFilter(txtBuscar, clasif){
     }
   });
 }
+
+$("#btnUser").click(function(){
+  window.location = './user.html'
+})
+
+$("#btnLogOut").click(function(){
+  localStorage.setItem('token', "")
+  window.location = './index.html'
+})
+
+$("#btnLogIn").click(function(){
+  window.location = './login.html'
+})

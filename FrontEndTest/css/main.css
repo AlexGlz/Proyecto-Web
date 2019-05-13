@@ -106,6 +106,32 @@ img.previewImg {
 	height: 35px;
 	width: 35px;
 	cursor: pointer;
+	vertical-align: middle;
+}
+
+#btnUser>img{
+	height: 25px;
+	width: 23px;
+}
+
+#btnLogIn{
+	vertical-align: middle;
+}
+
+#btnLogOut{
+	vertical-align: middle;
+}
+
+#btnLogIn>img{
+	height: 25px;
+	width: 23px;
+	vertical-align: middle;
+}
+
+#btnLogOut>img{
+	height: 25px;
+	width: 23px;
+	vertical-align: middle;
 }
 
 #btnUser:hover{

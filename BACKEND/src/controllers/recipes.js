@@ -98,5 +98,5 @@ module.exports ={
   getFilterRecipes:getFilterRecipes,
   createRecipe: createRecipe,
   updateRecipe: updateRecipe,
-
+  deleteRecipe: deleteRecipe
 }

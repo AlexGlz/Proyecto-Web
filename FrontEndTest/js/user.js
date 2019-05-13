@@ -5,6 +5,29 @@ if (token) {
 
 console.log(token)
 
+function loadUser(){
+  $.ajax({
+    url: 'http://localhost:3000/users',
+    //url: 'https://exam-final.herokuapp.com/todos',
+    headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + token
+    },
+    method: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log(data)
+      $("#nombre").html(data.name)
+      $("#edad").html(data.age)
+      $("#email").html(data.email);
+    },
+    error: function(error_msg) {
+      alert((error_msg['responseText']));
+    }
+  });
+}
+
+loadUser()
 
 function loadRecipes() {
   $.ajax({
@@ -66,7 +89,7 @@ function addRecipe(id,img,name,difficulty, prepTime,cookTime,clasif){
       </div>
       <div style="clear:both"></div>
   </li>
-    <div class="btnContainer">
+    <div id="btn${id}" class="btnContainer">
           <button class="btnMenu btnView" value="${id}">Ver</button><button class="btnMenu btnEdit" value="${id}">Editar</button><button class="btnMenu btnDelete" value="${id}">Eliminar</button>
     </div> `;
   $("#recipeHolder").append(newHTML);
@@ -79,7 +102,39 @@ function clickedView(event){
 	window.open("./receta.html?receta="+ this.value,"_self");
 }
 
+function clickedDelete(event){
+  var conf = window.confirm("¿Seguro que quieres borrar esta receta?");
+  if(conf){
+    $("#"+this.value).toggle();
+    $("#btn"+this.value).toggle()
+    deleteRecipe(this.value)
+  }else{
+
+  }
+}
 
 function setClick(){
 	$(".btnView").click(clickedView)
+  $(".btnDelete").click(clickedDelete)
 }
+
+
+function deleteRecipe(id){
+  $.ajax({
+    url: 'http://localhost:3000/recipes/'+id,
+    //url: 'https://exam-final.herokuapp.com/todos',
+    headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + token
+    },
+    method: 'DELETE',
+    dataType: 'json',
+    success: function(data){
+      console.log("success");
+    },
+    error: function(error_msg) {
+      alert((error_msg['responseText']));
+    }
+  });
+}
+

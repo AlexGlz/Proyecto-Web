@@ -29,6 +29,7 @@ router.get('/recipes/filter',recipes.getFilterRecipes)
 router.get('/recipes/:id',recipes.getRecipe)
 router.post('/recipes',auth,recipes.createRecipe)
 router.patch('/recipes/:id',auth,recipes.updateRecipe)
+router.delete('/recipes/:id', auth, recipes.deleteRecipe)
 
 router.get('*', function(req, res) {
   res.send({
