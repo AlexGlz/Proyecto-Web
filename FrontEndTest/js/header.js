@@ -5,7 +5,7 @@ if (token) {
 
 console.log(token)
 
-if(token != ""){
+if(token != "" && token != null){
   $("#btnUser").removeAttr("hidden");
   $("#btnLogIn").attr("hidden","");
   $("#btnLogOut").removeAttr("hidden");

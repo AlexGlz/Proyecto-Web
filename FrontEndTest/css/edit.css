@@ -1,0 +1,59 @@
+
+#content>div>div{
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.paso{
+	width: 80%;
+	resize: none;
+	border-width: 1px;
+	border-color: grey;
+	padding-left: 10px;
+	font-size: 15px;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+
+.ingrediente{
+	border-color: grey;
+	width: 70%;
+	padding-left: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0;
+	margin-bottom: 5px;
+}
+
+.add,.del{
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	border: none;
+	border-radius: 30px;
+	width: 23px;
+	height: 23px;
+	vertical-align: middle;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.add{
+	background-color: #77DD77;
+}
+
+.add:hover{
+	background-color: #67bf67;
+}
+
+.del{
+	background-color: #FF6961;
+}
+
+.del:hover{
+	background-color: #d15953;
+}
+
+#url{
+	width: 50%;
+}
